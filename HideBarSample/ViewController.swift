@@ -17,6 +17,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         tableView = UITableView(frame: view.bounds)
+        if let height = self.navigationController?.navigationBar.frame.height {
+            tableView.center.y += height
+        }
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: identifier)

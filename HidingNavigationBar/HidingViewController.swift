@@ -85,9 +85,11 @@ class HidingViewController {
 			newYOffset = view.center.y - deltaY
 			newYCenter = min(max(expandedCenterValue().y, newYOffset), contractedCenterValue().y)
 		}
-
-		view.center = CGPoint(x: view.center.x, y: newYCenter)
-
+        
+        UIView.animate(withDuration: 0.5, delay: 0, options: UIViewAnimationOptions(), animations: {
+            self.view.center = CGPoint(x: self.view.center.x, y: newYCenter)
+        })
+        
 		if alphaFadeEnabled {
 			var newAlpha: CGFloat = 1.0 - (expandedCenterValue().y - view.center.y) * 2 / contractionAmountValue()
 			newAlpha = CGFloat(min(max(.ulpOfOne, Float(newAlpha)), 1.0))
@@ -108,7 +110,7 @@ class HidingViewController {
     func snap(_ contract: Bool, completion:(() -> Void)!) -> CGFloat {
 		var deltaY: CGFloat = 0
 		
-		UIView.animate(withDuration: 0.2, delay: 0, options: UIViewAnimationOptions(), animations: {
+		UIView.animate(withDuration: 0.5, delay: 0, options: UIViewAnimationOptions(), animations: {
 			if let child = self.child {
 				if contract && child.isContracted() {
 					deltaY = self.contract()

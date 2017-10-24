@@ -309,7 +309,8 @@ open class HidingNavigationBarManager: NSObject, UIScrollViewDelegate, UIGesture
 			}
 			
 			// 6 - Update the shyViewController
-			_ = navBarController.updateYOffset(deltaY)
+			print(deltaY)
+            _ = navBarController.updateYOffset(deltaY)
 			_ = tabBarController?.updateYOffset(deltaY)
 		}
 		
@@ -362,7 +363,7 @@ open class HidingNavigationBarManager: NSObject, UIScrollViewDelegate, UIGesture
 	}
 	
 	fileprivate func handleScrollingEnded(_ velocity: CGFloat) {
-		let minVelocity: CGFloat = 500.0
+		let minVelocity: CGFloat = 300.0
 		if isViewControllerVisible() == false || (navBarController.isContracted() && velocity < minVelocity) {
 			return
 		}
@@ -385,7 +386,7 @@ open class HidingNavigationBarManager: NSObject, UIScrollViewDelegate, UIGesture
 			let contentInset = scrollViewContentInset
 			let top = contentInset.top + deltaY
 			
-			UIView.animate(withDuration: 0.2, animations: {
+			UIView.animate(withDuration: 0.5, animations: {
 				self.updateScrollContentInsetTop(top)
 				self.scrollView.contentOffset = newContentOffset
 			})
