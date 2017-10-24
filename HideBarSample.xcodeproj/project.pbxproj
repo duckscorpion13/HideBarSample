@@ -12,6 +12,8 @@
 		F948AE221F9F3FA900B4F566 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F948AE201F9F3FA900B4F566 /* Main.storyboard */; };
 		F948AE241F9F3FA900B4F566 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F948AE231F9F3FA900B4F566 /* Assets.xcassets */; };
 		F948AE271F9F3FA900B4F566 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F948AE251F9F3FA900B4F566 /* LaunchScreen.storyboard */; };
+		F948AE311F9F3FC100B4F566 /* HidingNavigationBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F948AE2F1F9F3FC100B4F566 /* HidingNavigationBarManager.swift */; };
+		F948AE321F9F3FC100B4F566 /* HidingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F948AE301F9F3FC100B4F566 /* HidingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		F948AE231F9F3FA900B4F566 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F948AE261F9F3FA900B4F566 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F948AE281F9F3FA900B4F566 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F948AE2F1F9F3FC100B4F566 /* HidingNavigationBarManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HidingNavigationBarManager.swift; sourceTree = "<group>"; };
+		F948AE301F9F3FC100B4F566 /* HidingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HidingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +42,7 @@
 		F948AE101F9F3FA900B4F566 = {
 			isa = PBXGroup;
 			children = (
+				F948AE2E1F9F3FC100B4F566 /* HidingNavigationBar */,
 				F948AE1B1F9F3FA900B4F566 /* HideBarSample */,
 				F948AE1A1F9F3FA900B4F566 /* Products */,
 			);
@@ -62,6 +67,15 @@
 				F948AE281F9F3FA900B4F566 /* Info.plist */,
 			);
 			path = HideBarSample;
+			sourceTree = "<group>";
+		};
+		F948AE2E1F9F3FC100B4F566 /* HidingNavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				F948AE2F1F9F3FC100B4F566 /* HidingNavigationBarManager.swift */,
+				F948AE301F9F3FC100B4F566 /* HidingViewController.swift */,
+			);
+			path = HidingNavigationBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +152,8 @@
 			files = (
 				F948AE1F1F9F3FA900B4F566 /* ViewController.swift in Sources */,
 				F948AE1D1F9F3FA900B4F566 /* AppDelegate.swift in Sources */,
+				F948AE311F9F3FC100B4F566 /* HidingNavigationBarManager.swift in Sources */,
+				F948AE321F9F3FC100B4F566 /* HidingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,7 +227,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -262,7 +278,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -277,6 +293,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P9EZG3V6S8;
 				INFOPLIST_FILE = HideBarSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lbd.HideBarSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -292,6 +309,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P9EZG3V6S8;
 				INFOPLIST_FILE = HideBarSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lbd.HideBarSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
