@@ -198,7 +198,7 @@ open class HidingNavigationBarManager: NSObject, UIScrollViewDelegate, UIGesture
 		
 		previousYOffset = CGFloat.nan
 		
-		handleScrolling()
+//        handleScrolling()
 	}
 	
 	open func expand() {
@@ -207,20 +207,22 @@ open class HidingNavigationBarManager: NSObject, UIScrollViewDelegate, UIGesture
 		
 		previousYOffset = CGFloat.nan
 		
-		handleScrolling()
+//        handleScrolling()
 	}
 	
 	//MARK: NSNotification
 	
     @objc func applicationWillEnterForeground() {
 		switch onForegroundAction {
-		case .show:
-			_ = navBarController.expand()
-			_ = tabBarController?.expand()
+//        case .show:
+//            _ = navBarController.expand()
+//            _ = tabBarController?.expand()
 		case .hide:
 			_ = navBarController.contract()
 			_ = tabBarController?.contract()
 		default:
+            _ = navBarController.expand()
+            _ = tabBarController?.expand()
 			break;
 		}
         handleScrolling()
@@ -267,7 +269,7 @@ open class HidingNavigationBarManager: NSObject, UIScrollViewDelegate, UIGesture
 		if previousYOffset.isNaN == false {
 			// 1 - Calculate the delta
 			var deltaY = previousYOffset - scrollView.contentOffset.y
-			
+            
 			// 2 - Ignore any scrollOffset beyond the bounds
 			let start = -topInset
 			if previousYOffset < start {
@@ -406,7 +408,7 @@ open class HidingNavigationBarManager: NSObject, UIScrollViewDelegate, UIGesture
 			handleScrolling()
 		default:
 			let velocity = gesture.velocity(in: scrollView).y
-			handleScrollingEnded(velocity)
+            handleScrollingEnded(velocity)
 		}
 	}
 	
